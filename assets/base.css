@@ -1,0 +1,75 @@
+:root {
+    /* COLORS */
+    --background-color: #ffffff;
+    --hover-color: rgba(0, 0, 0, 0.08);
+    --shadow-color: rgba(0, 0, 0, 0.2);
+
+    --primary-color: #02a367;
+    --tonal-color: #d9f6d4;
+
+    --text-color-dark: #293a33;
+    --text-color-light: white;
+
+    /* DIMENS */
+    --header-height: 64px;
+}
+
+* {
+    box-sizing: border-box;
+    align-items: center;
+    flex-wrap: wrap;
+
+    color: var(--text-color-dark);
+    font-family: "Lexend", system-ui;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    background-color: var(--background-color);
+
+    font-weight: 350;
+    font-size: 1.4rem;
+}
+
+.material-symbols-rounded {
+    font-weight: 250;
+}
+
+:where(h1, h2, h3, h4, h5, h6){
+    color: var(--text-color-dark);
+}
+
+:where(h1, h2, h3) {
+    font-weight: bold;
+}
+
+:where(h4, h5, h6) {
+    font-weight: normal;
+}
+
+h6 {
+    font-size: 1.0rem;
+}
+
+h5 {
+    font-size: 1.2rem;
+}
+
+h4 {
+    font-size: 1.4rem;
+}
+
+h3 {
+    font-size: 1.6rem;
+}
+
+h2 {
+    font-size: 1.8rem;
+}
+
+h1 {
+    font-size: 2rem;
+}
