@@ -108,15 +108,13 @@
 
 /* RESPONSIVE ============================================= */
 
-@media screen and (width >=1240px) {}
-
-@media screen and (width >=1024px) and (width < 1240px) {
+@media screen and (min-width: 1024px) and (max-width: 1240px) {
     .wide {
         width: 984px;
     }
 }
 
-@media screen and (width < 1024px) {
+@media screen and (max-width: 1023px) {
 
     /* Screen < 1024px */
     .wide {
@@ -227,7 +225,7 @@
     }
 }
 
-@media screen and (width < 768px) {
+@media screen and (max-width: 768px) {
 
     .grid {
         padding: 0 16px;
