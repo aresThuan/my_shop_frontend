@@ -11,7 +11,6 @@
 }
 
 .wide {
-    max-width: 1200px;
     margin: 0 auto;
 }
 
@@ -106,6 +105,12 @@
 }
 
 /* RESPONSIVE ============================================= */
+
+@media screen and (width >= 1240px) {
+    .wide {
+        max-width: 1200px;
+    }
+}
 
 @media screen and (width >=1024px) and (width < 1240px) {
     .wide {
