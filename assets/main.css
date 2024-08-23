@@ -176,7 +176,8 @@
 /* OUTSTANDING ================================================= */
 
 .home_outstanding .column .outstanding_title {
-    font-size: 4.8rem;
+    /* font-size: 4.8rem; */
+    font-size: 3.2rem;
     font-weight: bold;
 }
 
