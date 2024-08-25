@@ -5,12 +5,18 @@
     grid-row: auto;
     grid-template-columns: 1fr;
     grid-template-rows: 64px auto auto;
+    grid-template-areas: 
+    "header"
+    "content"
+    "footer"
+    ;
 }
 
 /* HEADER ========================================== */
 .header_main {
     grid-column: 1 / 2;
     grid-row: 1 / 2;
+    grid-area: "header";
 
     display: flex;
     position: sticky;
@@ -534,6 +540,9 @@
 @media screen and (width <= 48em) {
 
     /* Mobile */
+    html {
+        font-size: calc(62.5% + 20%);
+    }
     body {
         width: 768px;
     }
