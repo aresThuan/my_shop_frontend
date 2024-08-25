@@ -12,6 +12,8 @@
 
     /* DIMENS */
     --header-height: 64px;
+    --outstanding-image-L: 450px;
+    --outstanding-image-M: 300px;
 }
 
 * {
