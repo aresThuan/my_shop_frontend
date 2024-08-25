@@ -541,7 +541,7 @@
 
     /* Mobile */
     html {
-        font-size: calc(62.5% + 20%);
+        font-size: calc(62.5% + 30%);
     }
     body {
         width: 768px;
