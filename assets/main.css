@@ -461,7 +461,7 @@
 
 }
 
-@media screen and (width >=64em) and (width < 77.5em) {
+@media screen and (width >= 64em) and (width < 77.5em) {
 
     /* Medium to Small desktop */
     body {
@@ -531,7 +531,7 @@
     }
 }
 
-@media screen and (width <=48em) {
+@media screen and (width <= 48em) {
 
     /* Mobile */
     body {
