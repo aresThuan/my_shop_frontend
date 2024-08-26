@@ -5,10 +5,10 @@
     grid-row: auto;
     grid-template-columns: 1fr;
     grid-template-rows: 64px auto auto;
-    grid-template-areas: 
-    "header"
-    "content"
-    "footer"
+    grid-template-areas:
+        "header"
+        "content"
+        "footer"
     ;
 }
 
@@ -19,14 +19,13 @@
     grid-area: "header";
 
     display: flex;
-    position: sticky;
     z-index: 2;
     top: 0;
     left: 0;
     background-color: var(--background-color);
     justify-content: space-between;
 
-    min-height: var(--header-height);
+    min-height: var(--header-height-M);
 
     border-bottom: 1px solid var(--text-color-dark);
 }
@@ -111,6 +110,7 @@
     display: grid;
     grid-template-columns: 1;
     grid-template-rows: auto;
+    grid-area: "content";
 }
 
 /* OUTSTANDING ================================================= */
@@ -134,7 +134,7 @@
     grid-column: 1/2;
 
     margin: 16px 0;
-
+    font-size: 1.4rem;
 }
 
 .home_outstanding .button_filled {
@@ -195,30 +195,44 @@
     padding: 16px;
 
     cursor: pointer;
+
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, auto);
+    grid-template-areas:
+        "image"
+        "name-favorite"
+        "price-cart";
 }
 
 .product_item .product_image {
-    width: 100%;
     padding-top: 100%;
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
     background-color: var(--hover-color);
     border-radius: calc(32px - 16px);
+
+    grid-area: "image";
+    grid-column: 1/2;
+    grid-row: 1/2;
 }
 
 .product_item:hover .product_image {
     background-color: var(--tonal-color);
 }
 
-.product_item div {
+.product_item div:not(:first-child) {
     display: flex;
     justify-content: space-between;
-    align-items: center;
 }
 
-.product_item div:nth-child(2) {
-    padding: 8px 0;
+.product_item .product_info {
+    padding: 4px 0;
+}
+
+.product_action .product_price, .button_outline {
+    justify-content: space-between;
 }
 
 .product_info .product_name {
@@ -228,8 +242,8 @@
 
 .product_action .product_price {
     font-size: 1.6rem;
-    font-weight: normal;
-    padding-right: 8px;
+    font-weight: bold;
+    color: var(--primary-color);
 }
 
 /* BENIFIT ================================================= */
@@ -308,6 +322,7 @@
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     grid-template-rows: 1fr auto;
+    grid-area: "footer";
 
     margin-top: 24px;
     padding-top: 24px;
@@ -469,7 +484,7 @@
 
 }
 
-@media screen and (width >= 64em) and (width < 77.5em) {
+@media screen and (width >=64em) and (width < 77.5em) {
 
     /* Medium to Small desktop */
     body {
@@ -477,11 +492,15 @@
     }
 }
 
-@media screen and (width < 64em) {
+@media screen and (width <64em) {
 
     /* Tablet*/
     body {
         width: 644px;
+    }
+
+    .header_main {
+        min-height: var(--header-height-L);
     }
 
     main,
@@ -520,6 +539,10 @@
         font-size: 3.2rem;
     }
 
+    .outstand_content {
+        font-size: 1.2rem;
+    }
+
     .outstanding_image::after {
         height: calc(var(--outstanding-image-M) *80/100);
         width: calc(var(--outstanding-image-M) *80/100);
@@ -536,15 +559,37 @@
 
     .home_best_list {
         grid-template-columns: repeat(3, 1fr);
+        gap: 8px;
     }
+
+    .product_item div:not(:first-child) {
+        flex-direction: column;
+    }
+
+    .home_best_list .product_item {
+        padding: 8px;
+    }
+    .home_best_list .product_image {
+        border-radius: 24px;
+    }
+
+    .product_item .product_info {
+        padding: 8px 0;
+    }
+    .product_item .product_action .product_price, .button_outline {
+        flex: 1;
+        width: 100%;
+        text-align: center;
+        margin-top: 8px;
+    }
+
+
 }
 
-@media screen and (width <= 48em) {
+@media screen and (width <=48em) {
 
     /* Mobile */
-    html {
-        font-size: calc(62.5% + 30%);
-    }
+
     body {
         width: 768px;
     }
@@ -557,6 +602,14 @@
 
     .home_best_list {
         grid-template-columns: repeat(2, 1fr);
+    }
+
+    .product_item .product_info .product_name {
+        font-size: 2rem;
+    }
+
+    .product_item .product_action .product_price {
+        font-size: 2rem;
     }
 
     .home_footer {

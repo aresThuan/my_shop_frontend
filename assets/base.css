@@ -11,7 +11,8 @@
     --text-color-light: white;
 
     /* DIMENS */
-    --header-height: 64px;
+    --header-height-L: 72px;
+    --header-height-M: 64px;
     --outstanding-image-L: 450px;
     --outstanding-image-M: 300px;
 }
